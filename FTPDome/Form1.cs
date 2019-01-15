@@ -22,7 +22,7 @@ namespace FTPDome
             InitEvent();
         }
 
-        TOOL.WinSCPEx EACTFTP = null;
+        TOOL.FtpLibEx EACTFTP = null;
 
         string GetFullPath(TreeNode node) 
         {
@@ -195,7 +195,7 @@ namespace FTPDome
                 OpenFileDialog FB = new OpenFileDialog();
                 if (FB.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    EACTFTP.UpLoadFile(FB.FileName,TxtN.Text);
+                    EACTFTP.UpLoadFile(FB.FileName, TxtN.Text);
                     MessageBox.Show("OK");
                     RefreshUI();
                 }
@@ -330,7 +330,7 @@ namespace FTPDome
         {
             try
             {
-                EACTFTP = new TOOL.WinSCPEx(txtIP.Text.Trim(), int.Parse(txtport.Text.ToString()), "", txtUse.Text.Trim(), txtPW.Text.Trim());
+                EACTFTP = new TOOL.FtpLibEx(txtIP.Text.Trim(), int.Parse(txtport.Text.ToString()), "", txtUse.Text.Trim(), txtPW.Text.Trim());
                 RefreshUI();
             }
             catch (Exception ex)

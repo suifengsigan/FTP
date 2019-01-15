@@ -35,7 +35,14 @@
   <ItemGroup>
     <Reference Include="EACTSYSLOG, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\公司版本库\EACT(ZT)\EACTSYSLOG\bin\Debug\EACTSYSLOG.dll</HintPath>
+      <HintPath>bin\Debug\EACTSYSLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Windows.Forms">
+      <HintPath>bin\NLog.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

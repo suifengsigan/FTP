@@ -125,7 +125,7 @@
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(99, 23);
             this.txtIP.TabIndex = 10;
-            this.txtIP.Text = "192.168.1.30";
+            this.txtIP.Text = "127.0.0.1";
             // 
             // txtUse
             // 
@@ -274,7 +274,7 @@
             this.txtport.Name = "txtport";
             this.txtport.Size = new System.Drawing.Size(99, 23);
             this.txtport.TabIndex = 26;
-            this.txtport.Text = "1477";
+            this.txtport.Text = "21";
             // 
             // button6
             // 

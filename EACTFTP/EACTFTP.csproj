@@ -38,6 +38,13 @@
     <Reference Include="edtFTPnet">
       <HintPath>..\..\..\..\..\Desktop\edtftpnet\edtftpnet-2.2.3\bin\edtFTPnet.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FTPDome\bin\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Windows.Forms">
+      <HintPath>..\FTPDome\bin\Debug\NLog.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,9 +69,7 @@
     <Compile Include="ftplib\FtpFileInfo.cs" />
     <Compile Include="ftplib\WinApi.cs" />
     <Compile Include="FtpClientEx.cs" />
-    <Compile Include="FtpWebRequestEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinSCPEx.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
