@@ -12,10 +12,18 @@ namespace TOOL
         Session _session;
         ~WinSCPFTP()
         {
+            CloseFTP();
+        }
+
+        
+
+        public void CloseFTP()
+        {
             try
             {
                 using (_session)
                 {
+                    _session.Abort();
                 }
             }
             catch (Exception ex)
@@ -23,8 +31,6 @@ namespace TOOL
                 WriteLog("~WinSCPFTP", ex.Message);
             }
         }
-
-        public void CloseFTP() { }
 
         public WinSCPFTP(string FtpServerIP, string FtpRemotePath, string FtpUserID, string FtpPassword, bool SSL)
         {
