@@ -10,6 +10,7 @@ namespace TOOL
     public class WinSCPFTP : IEACTFTP
     {
         Session _session;
+        SessionOptions _sessionOptions;
         ~WinSCPFTP()
         {
             CloseFTP();
@@ -36,7 +37,7 @@ namespace TOOL
         {
             var strs = FtpServerIP.Split(':');
             // Setup session options
-            var sessionOptions = new SessionOptions
+            _sessionOptions = new SessionOptions
             {
                 Protocol = Protocol.Ftp,
                 PortNumber= int.Parse(strs[1]),
@@ -47,12 +48,12 @@ namespace TOOL
             };
             _session = new Session();
             // Connect
-            _session.Open(sessionOptions);
+            _session.Open(_sessionOptions);
         }
         public WinSCPFTP(string FtpServerIP, int FtpServerPort, string FtpRemotePath, string FtpUser, string FtpPassword)
         {
             // Setup session options
-            var sessionOptions = new SessionOptions
+            _sessionOptions = new SessionOptions
             {
                 Protocol = Protocol.Ftp,
                 PortNumber= FtpServerPort,
@@ -64,7 +65,7 @@ namespace TOOL
 
             _session = new Session();
             // Connect
-            _session.Open(sessionOptions);
+            _session.Open(_sessionOptions);
         }
 
         public void Delete(string fileName)
