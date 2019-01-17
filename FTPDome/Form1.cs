@@ -33,15 +33,21 @@ namespace FTPDome
 
         void GetFullPath(TreeNode node, ref string path)
         {
+            _GetFullPath(node, ref path);
+            path = textBox1.Text + path;
+        }
+
+        void _GetFullPath(TreeNode node, ref string path)
+        {
           
             if (node != null) 
             {
 
                 var ex =string.Empty;
-                path = string.Format("{0}{1}{2}", textBox1.Text, node.Text, path);
+                path = string.Format("{0}{1}{2}", "/", node.Text, path);
                 if (node.Parent != null)
                 {
-                    GetFullPath(node.Parent, ref path);
+                    _GetFullPath(node.Parent, ref path);
                 }
             }
         }
