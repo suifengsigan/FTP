@@ -22,7 +22,7 @@ namespace FTPDome
             InitEvent();
         }
 
-        TOOL.FtpLibEx EACTFTP = null;
+        TOOL.WinSCPFTP EACTFTP = null;
 
         string GetFullPath(TreeNode node) 
         {
@@ -51,15 +51,16 @@ namespace FTPDome
             bool isConnect = EACTFTP != null;
             if (isConnect) 
             {
-                TxtN.Text = "/";
+                TxtN.Text = "/NCDATA/";
+                var text = TxtN.Text;
                 treeView1.Nodes.Clear();
                 listBox1.Items.Clear();
 
-                EACTFTP.GetDirectoryList("/").ToList().ForEach(u => {
+                EACTFTP.GetDirectoryList(text).ToList().ForEach(u => {
                     treeView1.Nodes.Add(u);
                 });
 
-                EACTFTP.GetFileList("/").ToList().ForEach(u => {
+                EACTFTP.GetFileList(text).ToList().ForEach(u => {
                     listBox1.Items.Add(u);
                 });
             }
@@ -330,7 +331,7 @@ namespace FTPDome
         {
             try
             {
-                EACTFTP = new TOOL.FtpLibEx(txtIP.Text.Trim(), int.Parse(txtport.Text.ToString()), "", txtUse.Text.Trim(), txtPW.Text.Trim());
+                EACTFTP = new TOOL.WinSCPFTP(txtIP.Text.Trim(), int.Parse(txtport.Text.ToString()), "", txtUse.Text.Trim(), txtPW.Text.Trim());
                 RefreshUI();
             }
             catch (Exception ex)
