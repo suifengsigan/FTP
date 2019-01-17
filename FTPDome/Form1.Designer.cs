@@ -59,6 +59,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.ckAscii = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // HttpU
@@ -389,11 +390,20 @@
             this.ckAscii.Text = "ASCII";
             this.ckAscii.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(358, 117);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(62, 23);
+            this.textBox1.TabIndex = 36;
+            this.textBox1.Text = "/";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 480);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ckAscii);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnClose);
@@ -468,6 +478,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox ckAscii;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

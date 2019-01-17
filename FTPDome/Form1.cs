@@ -38,7 +38,7 @@ namespace FTPDome
             {
 
                 var ex =string.Empty;
-                path = string.Format("{0}{1}{2}", "/",node.Text, path);
+                path = string.Format("{0}{1}{2}", textBox1.Text, node.Text, path);
                 if (node.Parent != null)
                 {
                     GetFullPath(node.Parent, ref path);
@@ -51,7 +51,7 @@ namespace FTPDome
             bool isConnect = EACTFTP != null;
             if (isConnect) 
             {
-                TxtN.Text = "/NCDATA/";
+                TxtN.Text = textBox1.Text;
                 var text = TxtN.Text;
                 treeView1.Nodes.Clear();
                 listBox1.Items.Clear();
